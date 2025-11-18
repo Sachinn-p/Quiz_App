@@ -1,30 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Register from './components/Register';
+import { AuthProvider } from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
-import UserInfo from './components/UserInfo';
+import Register from './components/Register';
+import ForgotPassword from './components/ForgotPassword';
+import QuickQuiz from './components/QuickQuiz';
+import './App.css';
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token'));
-
-  useEffect(() => {
-    if (token) {
-      localStorage.setItem('token', token);
-    } else {
-      localStorage.removeItem('token');
-    }
-  }, [token]);
-
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={token ? <Navigate to="/user-info" /> : <Navigate to="/login" />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
-          <Route path="/user-info" element={token ? <UserInfo /> : <Navigate to="/login" />} />
-        </Routes>
-      </div>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true
+      }}
+    >
+      <AuthProvider>
+        <div className="app-container">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route 
+              path="/" 
+              element={
+                <PrivateRoute>
+                  <QuickQuiz />
+                </PrivateRoute>
+              } 
+            />
+            <Route 
+              path="/quiz" 
+              element={
+                <PrivateRoute>
+                  <QuickQuiz />
+                </PrivateRoute>
+              } 
+            />
+          </Routes>
+        </div>
+      </AuthProvider>
     </Router>
   );
 }
