@@ -339,6 +339,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email [your-email@domain.com] or create an issue in the repository.
+For support, email [sachinn2413@gmail.com] or create an issue in the repository.
 
 **Built with ❤️ using FastAPI, React, and LLaMA AI**
