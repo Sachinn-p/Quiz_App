@@ -1,0 +1,28 @@
+# Backend
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+.venv
+*.log
+
+# Frontend
+node_modules/
+npm-debug.log*
+dist/
+.env
+.env.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo

@@ -1,0 +1,89 @@
+# ===============================
+# Python bytecode & cache
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===============================
+# Virtual environments
+# ===============================
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+# ===============================
+# Packaging / build artifacts
+# ===============================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ===============================
+# Test / coverage reports
+# ===============================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ===============================
+# Logs & runtime files
+# ===============================
+*.log
+*.pid
+*.sqlite3
+*.db
+
+# ===============================
+# Environment & secrets
+# ===============================
+.env
+.env.*
+secrets.yml
+credentials.json
+
+# ===============================
+# IDE & editor configs
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# OS generated files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Jupyter notebooks
+# ===============================
+.ipynb_checkpoints/
+
+# ===============================
+# MyPy / type checker
+# ===============================
+.mypy_cache/
+.dmypy.json
+
+# ===============================
+# PyInstaller
+# ===============================
+*.spec
+
+# ===============================
+# Documentation builds
+# ===============================
+docs/_build/
+
+# ===============================
+# Local config overrides
+# ===============================
+config.local.*
